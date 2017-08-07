@@ -1,0 +1,139 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.PortfolioPageStyle1>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+	Layout = "c_Master.cshtml";
+	int count = 1;
+}
+
+<!-- Main content -->
+<div class="page-wrap container">
+    <h3>@CurrentPage.title</h3>
+    <div class="space30"></div>
+        <!-- Portfolio content -->
+        <section id="portfolio">
+            <!-- Start Filter -->
+			<ul class="folio-filter xtra" data-option-key="filter">
+				<li><a class="selected" href="#filter" data-option-value="*">View all</a></li>
+				<li><a href="#filter" data-option-value=".Contemporary">Contemporary</a></li>
+				<li><a href="#filter" data-option-value=".Portrait">Portrait</a></li>
+				<li><a href="#filter" data-option-value=".Drawing">Drawing</a></li>
+				<li><a href="#filter" data-option-value=".Southwest">Southwest</a></li>
+				<li><a href="#filter" data-option-value=".911">911</a></li>
+				<li><a href="#filter" data-option-value=".Sold">Sold</a></li>
+				<li><a href="#filter" data-option-value=".ForSale">For Sale</a></li>
+			</ul>
+			<!-- End Filter -->
+			<div class="portfolio-inner nport portfolio-grid">
+				<div id="folio" class="isotope">
+				    @foreach (var art in CurrentPage.Children)
+                    {
+                        var classes = art.category;
+                        if(art.HasValue("availability")){
+                            if(art.availability == "Sold"){
+                                classes += " Sold";
+                            }else if(art.availability == "For Sale"){
+                                classes += " ForSale";
+                            }
+                        }
+                        if (art.HasValue("image")){ 
+                        <div class="folio-item col-md-4 isotope-item @classes">
+                            <div class="p-item-inner">
+							    <img src="@Umbraco.Media(art.image.ToString()).Url" class="img-responsive" alt="@art.Title"> 
+    							<div class="overlay-wrap">
+    								<div class="overlay">
+    									<div class="overlay-inner">
+    										<a href="#" data-toggle="modal" data-target="#modal@(count)"><i class="fa fa-plus"></i></a>
+    										<div class="space30"></div>
+    										<h5>@art.Title</h5>
+    										@if(art.HasValue("description")){
+    										    <p>@art.description</p>
+    										}
+    									</div>
+    								</div>
+    							</div>
+    						</div>
+						</div>
+                        }
+                        count ++;
+                    }
+				</div>
+				<div class="space50"></div>
+				<div class="row page-nav">
+					<div class="col-md-12 no-padding">
+						<div class="col-md-6">
+							<ul>
+								<li><a href="#"><i class="fa fa-chevron-left"></i></a></li>
+								<li class="active"><a href="#">1</a></li>
+								<li><a href="#">2</a></li>
+								<li><a href="#"><i class="fa fa-chevron-right"></i></a></li>
+							</ul>
+						</div>
+						<div class="col-md-6">
+						</div>
+					</div>
+				</div>
+			</div>
+        </section>
+        <!-- Portfolio content -->
+</div>
+<!-- Main content -->
+
+@section BottomHtml{
+    @{count = 1;}
+    @foreach (var art in CurrentPage.Children)
+    {
+        <!-- Portfolio - Modal -->
+    	<div class="modal fade" id="modal@(count)" tabindex="-1" role="dialog">
+    		<div class="modal-dialog">
+    			<div class="modal-content">
+    				<div class="modal-body">
+    					<span class="close" data-dismiss="modal" data-target="#modal@(count)"><img src="/images/close.png" alt="img"></span>
+    					<a class="prev-project" href="#"  data-toggle="modal" data-dismiss="modal" data-target="#modal@(count - 1)"></a>
+    					<a class="next-project" href="#"  data-toggle="modal" data-dismiss="modal"  data-target="#modal@(count + 1)"></a>
+    					<div class="project-single project-single2 container">
+    						<div class="col-md-12">
+    							<div class="project-slide1">
+    								<div class="big-img">
+    									<img src="@Umbraco.Media(art.image.ToString()).Url" class="img-responsive p1-img" alt="img">
+    								</div>
+    							</div>
+    						</div>
+    						<div class="col-md-7">
+    							<h4>@art.Title</h4>
+    							@if(art.HasValue("description")){
+    							    <p>@art.description</p>
+    							}
+    						</div>
+    						<div class="col-md-5">
+    							<div class="project-details">
+    							    @if(art.HasValue("size")){
+    							        <h5>Size:</h5>
+    							        <p>@art.size</p>
+    							    }
+    							    @if(art.HasValue("media")){
+    							        <h5>Media:</h5>
+    							        <p>@art.media</p>
+    							    }
+    							    @if(art.HasValue("category")){
+    							        <h5>Category</h5>
+    							        <p>@art.category</p>
+    							    }
+    							    @if(art.HasValue("availability")){
+    							        <h5>Availability</h5>
+    							        <p>@art.availability</p>
+    							    }
+    							    @if(art.HasValue("onDisplayAt")){
+    							        <h5>This artwork is currently on display at:</h5>
+    							        <p>@art.onDisplayAt</p>
+    							    }
+    							</div>
+    						</div>
+    						<div class="space90"></div>
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+    	</div><!-- /Portfolio - Modal -->
+    	count ++;
+    }
+}

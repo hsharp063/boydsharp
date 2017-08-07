@@ -1,0 +1,10 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+	Layout = "c_Master.cshtml";
+}
+
+<div class="page-wrap container">
+    <div class="space30"></div>
+    @CurrentPage.GetGridHtml("content", "Chemistry")
+</div>
+
