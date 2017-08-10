@@ -8,8 +8,8 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "2aff6d7041ce7377")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.5")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "4c8bb13b6121d977")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 
 // FILE: models.generated.cs
@@ -345,6 +345,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Feature on home page: Should this show on the home page? Note, 4 is the ideal number of photos to show on the home page.
+		///</summary>
+		[ImplementPropertyType("featureOnHomePage")]
+		public bool FeatureOnHomePage
+		{
+			get { return this.GetPropertyValue<bool>("featureOnHomePage"); }
+		}
+
+		///<summary>
 		/// Main Image: Select image to display
 		///</summary>
 		[ImplementPropertyType("image")]
@@ -478,21 +487,48 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Site Logo
-		///</summary>
-		[ImplementPropertyType("siteLogo")]
-		public string SiteLogo
-		{
-			get { return this.GetPropertyValue<string>("siteLogo"); }
-		}
-
-		///<summary>
 		/// Site Title
 		///</summary>
 		[ImplementPropertyType("siteTitle")]
 		public string SiteTitle
 		{
 			get { return this.GetPropertyValue<string>("siteTitle"); }
+		}
+
+		///<summary>
+		/// Small image 1: The top image on the right of the Main Image
+		///</summary>
+		[ImplementPropertyType("smallImage1")]
+		public IPublishedContent SmallImage1
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("smallImage1"); }
+		}
+
+		///<summary>
+		/// Small image 2: The second image on the right of the Main Image
+		///</summary>
+		[ImplementPropertyType("smallImage2")]
+		public IPublishedContent SmallImage2
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("smallImage2"); }
+		}
+
+		///<summary>
+		/// Small image 3: The third image on the right of the Main Image
+		///</summary>
+		[ImplementPropertyType("smallImage3")]
+		public IPublishedContent SmallImage3
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("smallImage3"); }
+		}
+
+		///<summary>
+		/// Small image 4: The bottom image on the right of the Main Image
+		///</summary>
+		[ImplementPropertyType("smallImage4")]
+		public IPublishedContent SmallImage4
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("smallImage4"); }
 		}
 	}
 

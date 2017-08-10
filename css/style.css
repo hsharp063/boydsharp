@@ -3471,5 +3471,7 @@ body {
 .icon-demo h2 {margin-bottom:20px}
 
 
-
-
+/*****************Custom*/
+h1.logo a {
+    color: white;
+}

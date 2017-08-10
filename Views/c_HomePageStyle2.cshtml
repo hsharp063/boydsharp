@@ -1,0 +1,625 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+<!--[if IE 8]>			<html class="ie ie8"> <![endif]-->
+<!--[if IE 9]>			<html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+
+	<!-- Meta -->
+	<meta charset="utf-8">
+	<meta name="description" content="@CurrentPage.siteDescription">
+	<meta name="author" content="Sharp Software Solutions">
+
+	<title>@CurrentPage.Name | @CurrentPage._siteTitle</title>
+
+	<!-- Mobile Meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Favicons -->
+	<link rel="shortcut icon" href="images/favicon.ico">
+
+	<!-- Google Webfonts -->
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,700,600italic,700italic,800,800italic,300italic,300" rel="stylesheet">
+	<link href="http://fonts.googleapis.com/css?family=Sanchez:400,400italic" rel="stylesheet">
+
+	<!--[if lt IE 9]>
+	<script src="/js/libs/respond.min.js"></script>
+	<![endif]-->
+
+	<!-- Bootstrap core CSS -->
+	<link href="/css/bootstrap.css" rel="stylesheet">
+
+	<!-- Theme Styles CSS-->
+	<link href="/css/style.css" rel="stylesheet">
+    <link href="/css/theme-shop.css" rel="stylesheet">
+	<link href="/css/elements.css" rel="stylesheet">
+	<link href="/css/fonts/icomoon/iconmoon.css" rel="stylesheet">
+    <link href="/css/fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
+	
+    <!-- Plugins CSS -->
+    <link href="/js/owl-carousel/owl.carousel.css" rel="stylesheet">
+    <link href="/js/owl-carousel/owl.theme.css" rel="stylesheet">
+    <link href="/js/flexslider/flexslider.css" rel="stylesheet">
+	<link href="/css/isotope.css" rel="stylesheet">
+	<link href="/js/slickNav/slicknav.css" rel="stylesheet" >
+    <link href="/js/fancybox/jquery.fancybox.css" rel="stylesheet">
+    
+
+	<!--[if lt IE 9]>
+	<script src="/js/libs/html5.js"></script>
+	<![endif]-->
+
+</head>
+<body id="pages">
+
+<div class="body">
+	<div class="top-wrap">
+		<div class="overlay-bg"></div>
+
+		<!-- Header -->
+		<header>
+			<div class="container">
+				<div class="col-md-12">
+
+					<!-- Logo -->
+					<h1 class="logo"><a href="./index.html">Boyd Sharp Art</a></h1>
+					@{ Html.RenderPartial("c_MainNavigation"); }
+				</div>
+			</div>
+		</header>
+		<!-- Header -->
+
+		@Html.Partial("c_ImageSliderFromSubPages")
+	</div>
+
+
+	<div class="main-wrap">
+		<!-- Services -->
+		<div class="container services2">
+			<div class="col-md-2 service-content">
+				<div class="icon-surround-1 new-lh"><i class="icon-leaf"></i></div>
+				<div class="services-popup">
+					<h4>Clean &amp; Modern</h4>
+					<p>There are many variations of passages of Lorem Ipsum available.</p>
+				</div>
+			</div>
+			<div class="col-md-2 service-content">
+				<div class="icon-surround-1 new-lh"><i class="icon-droplet2"></i></div>
+				<div class="services-popup">
+					<h4>Unique Design</h4>
+					<p>There are many variations of passages of Lorem Ipsum available.</p>
+				</div>
+			</div>
+			<div class="col-md-2 service-content">
+				<div class="icon-surround-1 new-lh"><i class="icon-lamp"></i></div>
+				<div class="services-popup">
+					<h4>Creative Ideas</h4>
+					<p>There are many variations of passages of Lorem Ipsum available.</p>
+				</div>
+			</div>
+			<div class="col-md-2 service-content">
+				<div class="icon-surround-1 new-lh"><i class="icon-mobile"></i></div>
+				<div class="services-popup">
+					<h4>Responsive Layout</h4>
+					<p>There are many variations of passages of Lorem Ipsum available.</p>
+				</div>
+			</div>
+			<div class="col-md-2 service-content">
+				<div class="icon-surround-1 new-lh"><i class="icon-equalizer"></i></div>
+				<div class="services-popup">
+					<h4>Easy Customization</h4>
+					<p>There are many variations of passages of Lorem Ipsum available.</p>
+				</div>
+			</div>
+			<div class="col-md-2 service-content">
+				<div class="icon-surround-1 new-lh"><i class="icon-users"></i></div>
+				<div class="services-popup">
+					<h4>Top Support</h4>
+					<p>There are many variations of passages of Lorem Ipsum available.</p>
+				</div>
+			</div>
+		</div>
+		<!-- Services -->
+
+		<div class="space20"></div>
+		<div class="divider"></div>
+		<div class="space40"></div>
+
+		<!-- Home - Blog -->
+		<div class="container no-padding">
+			<h3 class="head-title">Latest Blogposts</h3>
+			<div class="home-mission home-blog">
+				<div class="row">
+					<div class="col-md-3 home-blog-content">
+						<div class="home-blog-inner">
+							<img src="http://placehold.it/451x326" class="img-responsive" alt="img">
+							<div class="home-blog-overlay">
+								<div class="overlay">
+									<div class="overlay-inner">
+										<a href="./blog1.html"><i class="fa fa-link"></i></a>
+									</div>
+								</div>
+								<div class="blog-meta"><span><i class="fa fa-clock-o"></i> 09/12/14</span> <span><i class="fa fa-comments"></i>28</span> <span><i class="fa fa-eye"></i>117</span></div>
+							</div>
+						</div>
+						<a href="#">
+							<h4>Lorem ipsum dolor sit</h4>
+						</a>
+						<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+					</div>
+					<div class="col-md-3 home-blog-content">
+						<div class="home-blog-inner">
+							<img src="http://placehold.it/451x326" class="img-responsive" alt="img">
+							<div class="home-blog-overlay">
+								<div class="overlay">
+									<div class="overlay-inner">
+										<a href="./blog1.html"><i class="fa fa-link"></i></a>
+									</div>
+								</div>
+								<div class="blog-meta"><span><i class="fa fa-clock-o"></i> 09/12/14</span> <span><i class="fa fa-comments"></i>28</span> <span><i class="fa fa-eye"></i>117</span></div>
+							</div>
+						</div>
+						<a href="#">
+							<h4>Lorem ipsum dolor sit</h4>
+						</a>
+						<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+					</div>
+					<div class="col-md-3 home-blog-content">
+						<div class="home-blog-inner">
+							<img src="http://placehold.it/451x326" class="img-responsive" alt="img">
+							<div class="home-blog-overlay">
+								<div class="overlay">
+									<div class="overlay-inner">
+										<a href="./blog1.html"><i class="fa fa-link"></i></a>
+									</div>
+								</div>
+								<div class="blog-meta"><span><i class="fa fa-clock-o"></i> 09/12/14</span> <span><i class="fa fa-comments"></i>28</span> <span><i class="fa fa-eye"></i>117</span></div>
+							</div>
+						</div>
+						<a href="#">
+							<h4>Lorem ipsum dolor sit</h4>
+						</a>
+						<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+					</div>
+					<div class="col-md-3 home-blog-content">
+						<div class="home-blog-inner">
+							<img src="http://placehold.it/451x326" class="img-responsive" alt="img">
+							<div class="home-blog-overlay">
+								<div class="overlay">
+									<div class="overlay-inner">
+										<a href="./blog1.html"><i class="fa fa-link"></i></a>
+									</div>
+								</div>
+								<div class="blog-meta"><span><i class="fa fa-clock-o"></i> 09/12/14</span> <span><i class="fa fa-comments"></i>28</span> <span><i class="fa fa-eye"></i>117</span></div>
+							</div>
+						</div>
+						<a href="#">
+							<h4>Lorem ipsum dolor sit</h4>
+						</a>
+						<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+					</div>
+					<a href="./blog1.html" class="btn btn-primary btn-orange btn-sm uppercase center-block pull-right" style="margin-right:15px;">Go to blog &rarr;</a>
+				</div>
+			</div>
+
+			<!-- Home - Projects -->
+			<h3 class="head-title">Recent Work</h3>
+			<div class="home-projects">
+				<div id="home-projects" class="owl-carousel">
+					<div class="item">
+						<div class="row">
+							<div class="col-md-6 p-item">
+								<div class="p-item-inner">
+									<img src="http://placehold.it/800x412" class="img-responsive" alt="img">
+									<div class="overlay-wrap">
+										<div class="overlay">
+											<div class="overlay-inner">
+												<a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i></a>
+												<div class="space30"></div>
+												<h5>Project Title</h5>
+												<p>Cum sociis natoque penatibus et magnis dis parturient montes.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3 p-item">
+								<div class="p-item-inner">
+									<img src="http://placehold.it/500x522" class="img-responsive" alt="img">
+									<div class="overlay-wrap">
+										<div class="overlay">
+											<div class="overlay-inner">
+												<a href="#" data-toggle="modal" data-target="#myModal1"><i class="fa fa-plus"></i></a>
+												<div class="space30"></div>
+												<h5>Project Title</h5>
+												<p>Cum sociis natoque penatibus et magnis dis parturient montes.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3 p-item">
+								<div class="p-item-inner">
+									<img src="http://placehold.it/500x522" class="img-responsive" alt="img">
+									<div class="overlay-wrap">
+										<div class="overlay">
+											<div class="overlay-inner">
+												<a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i></a>
+												<div class="space30"></div>
+												<h5>Project Title</h5>
+												<p>Cum sociis natoque penatibus et magnis dis parturient montes.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-2 col-sm-4 p-item">
+								<div class="p-item-inner">
+									<img src="http://placehold.it/150x150" class="img-responsive" alt="img">
+									<div class="overlay-wrap">
+										<div class="overlay">
+											<div class="overlay-inner">
+												<a href="#" data-toggle="modal" data-target="#myModal1"><i class="fa fa-plus"></i></a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-2 col-sm-4 p-item">
+								<div class="p-item-inner">
+									<img src="http://placehold.it/150x150" class="img-responsive" alt="img">
+									<div class="overlay-wrap">
+										<div class="overlay">
+											<div class="overlay-inner">
+												<a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i></a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-2 col-sm-4 p-item">
+								<div class="p-item-inner">
+									<img src="http://placehold.it/150x150" class="img-responsive" alt="img">
+									<div class="overlay-wrap">
+										<div class="overlay">
+											<div class="overlay-inner">
+												<a href="#" data-toggle="modal" data-target="#myModal1"><i class="fa fa-plus"></i></a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-2 col-sm-4 p-item">
+								<div class="p-item-inner">
+									<img src="http://placehold.it/150x150" class="img-responsive" alt="img">
+									<div class="overlay-wrap">
+										<div class="overlay">
+											<div class="overlay-inner">
+												<a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i></a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-2 col-sm-4 p-item">
+								<div class="p-item-inner">
+									<img src="http://placehold.it/150x150" class="img-responsive" alt="img">
+									<div class="overlay-wrap">
+										<div class="overlay">
+											<div class="overlay-inner">
+												<a href="#" data-toggle="modal" data-target="#myModal1"><i class="fa fa-plus"></i></a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-2 col-sm-4 p-item">
+								<div class="p-item-inner">
+									<img src="http://placehold.it/150x150" class="img-responsive" alt="img">
+									<div class="overlay-wrap">
+										<div class="overlay">
+											<div class="overlay-inner">
+												<a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i></a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="row">
+							<div class="col-md-6 p-item">
+								<div class="p-item-inner">
+									<img src="http://placehold.it/800x412" class="img-responsive" alt="img">
+									<div class="overlay-wrap">
+										<div class="overlay">
+											<div class="overlay-inner">
+												<a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i></a>
+												<div class="space30"></div>
+												<h5>Project Title</h5>
+												<p>Cum sociis natoque penatibus et magnis dis parturient montes.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3 p-item">
+								<div class="p-item-inner">
+									<img src="http://placehold.it/500x522" class="img-responsive" alt="img">
+									<div class="overlay-wrap">
+										<div class="overlay">
+											<div class="overlay-inner">
+												<a href="#" data-toggle="modal" data-target="#myModal1"><i class="fa fa-plus"></i></a>
+												<div class="space30"></div>
+												<h5>Project Title</h5>
+												<p>Cum sociis natoque penatibus et magnis dis parturient montes.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3 p-item">
+								<div class="p-item-inner">
+									<img src="http://placehold.it/500x522" class="img-responsive" alt="img">
+									<div class="overlay-wrap">
+										<div class="overlay">
+											<div class="overlay-inner">
+												<a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i></a>
+												<div class="space30"></div>
+												<h5>Project Title</h5>
+												<p>Cum sociis natoque penatibus et magnis dis parturient montes.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-2 col-sm-4 p-item">
+								<div class="p-item-inner">
+									<img src="http://placehold.it/150x150" class="img-responsive" alt="img">
+									<div class="overlay-wrap">
+										<div class="overlay">
+											<div class="overlay-inner">
+												<a href="#" data-toggle="modal" data-target="#myModal1"><i class="fa fa-plus"></i></a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-2 col-sm-4 p-item">
+								<div class="p-item-inner">
+									<img src="http://placehold.it/150x150" class="img-responsive" alt="img">
+									<div class="overlay-wrap">
+										<div class="overlay">
+											<div class="overlay-inner">
+												<a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i></a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-2 col-sm-4 p-item">
+								<div class="p-item-inner">
+									<img src="http://placehold.it/150x150" class="img-responsive" alt="img">
+									<div class="overlay-wrap">
+										<div class="overlay">
+											<div class="overlay-inner">
+												<a href="#" data-toggle="modal" data-target="#myModal1"><i class="fa fa-plus"></i></a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-2 col-sm-4 p-item">
+								<div class="p-item-inner">
+									<img src="http://placehold.it/150x150" class="img-responsive" alt="img">
+									<div class="overlay-wrap">
+										<div class="overlay">
+											<div class="overlay-inner">
+												<a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i></a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-2 col-sm-4 p-item">
+								<div class="p-item-inner">
+									<img src="http://placehold.it/150x150" class="img-responsive" alt="img">
+									<div class="overlay-wrap">
+										<div class="overlay">
+											<div class="overlay-inner">
+												<a href="#" data-toggle="modal" data-target="#myModal1"><i class="fa fa-plus"></i></a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-2 col-sm-4 p-item">
+								<div class="p-item-inner">
+									<img src="http://placehold.it/150x150" class="img-responsive" alt="img">
+									<div class="overlay-wrap">
+										<div class="overlay">
+											<div class="overlay-inner">
+												<a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i></a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+				<div class="space20"></div>
+				<a href="./portfolio_01.html" class="btn btn-primary btn-orange btn-sm uppercase center-block pull-right">View Portfolio &rarr;</a>
+				<div class="clear"></div>
+				<div class="space50"></div>
+			</div>
+
+			<!-- Testimonials -->
+			<h3 class="head-title">Testimonials</h3>
+			<div class="home-quotes">
+				<div class="row">
+					<div class="col-md-12">
+						<div id="home-quotes2" class="owl-carousel">
+							<div class="item">
+								<div class="row">
+									<div class="col-md-12 quote2-content">
+										<div class="quote-author">
+											<img src="http://placehold.it/100x105" alt="img">
+											<h4>Kobe Yamson</h4>
+											<h6>Co Founder of Thingys</h6>
+										</div>
+										<div class="quote-info">
+											<h5>Awesome Stuff!</h5>
+											<p>Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
+											<ul class="ratings">
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="item">
+								<div class="row">
+									<div class="col-md-12 quote2-content">
+										<div class="quote-author">
+											<img src="http://placehold.it/100x105" alt="img">
+											<h4>Anthony Clark</h4>
+											<h6>Vide President</h6>
+										</div>
+										<div class="quote-info">
+											<h5>This Theme Is A Must Buy!</h5>
+											<p>Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
+											<ul class="ratings">
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="item">
+								<div class="row">
+									<div class="col-md-12 quote2-content">
+										<div class="quote-author">
+											<img src="http://placehold.it/100x105" alt="img">
+											<h4>Maria Doe</h4>
+											<h6>Web Designer</h6>
+										</div>
+										<div class="quote-info">
+											<h5>Simply Awesome!</h5>
+											<p>Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
+											<ul class="ratings">
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="item">
+								<div class="row">
+									<div class="col-md-12 quote2-content">
+										<div class="quote-author">
+											<img src="http://placehold.it/100x105" alt="img">
+											<h4>Anthony Mark</h4>
+											<h6>Co-President</h6>
+										</div>
+										<div class="quote-info">
+											<h5>I am totally stunned!</h5>
+											<p>Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
+											<ul class="ratings">
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Footer -->
+	<footer>
+		<div class="container">
+			<div class="col-md-2 footer-widget">
+				<h6>Quick Links</h6>
+				<ul class="link-list">
+					<li><a href="#">&rarr; Features</a></li>
+					<li><a href="#">&rarr; Portfolio</a></li>
+					<li><a href="#">&rarr; Our Blog</a></li>
+					<li><a href="#">&rarr; About</a></li>
+					<li><a href="#">&rarr; Contact</a></li>
+				</ul>
+			</div>
+			<div class="col-md-2 footer-widget">
+				<h6>Blogroll</h6>
+				<ul class="link-list">
+					<li><a href="#">&rarr; Forums</a></li>
+					<li><a href="#">&rarr; Support/Help</a></li>
+					<li><a href="#">&rarr; Privacy Policy</a></li>
+					<li><a href="#">&rarr; Documentation</a></li>
+					<li><a href="#">&rarr; Terms</a></li>
+				</ul>
+			</div>
+			<div class="col-md-2 footer-widget">
+				<h6>Contact</h6>
+				<p>Design Headquarters<br>456 W57th Street<br>NYC, New York 06415</p>
+			</div>
+			<div class="col-md-6 footer-widget">
+				<h6>Be Sociable</h6>
+				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+				<ul class="social">
+					<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+					<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+					<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+					<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+					<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+				</ul>
+			</div>
+		</div>
+	</footer>
+	<div class="footer-copy">
+		<div class="container">
+			<div class="col-md-12">
+				<p>&copy; Copyright 2017 Sharp Software Solutions</p>
+			</div>
+		</div>
+	</div>
+	<!-- Footer -->
+	
+</div>
+
+<!-- JavaScript -->
+<script src="/js/jquery.js"></script>
+<script src="/js/bootstrap.js"></script>
+<script src="/js/owl-carousel/owl.carousel.js"></script>
+<script src="/js/flexslider/jquery.flexslider.js"></script>
+<script src="/js/slickNav/jquery.slicknav.min.js"></script>
+<script src="/js/jquery.isotope.min.js"></script>
+<script src="/js/fancybox/jquery.fancybox.pack.js"></script>
+<script src="/js/main.js"></script>
+
+
+</body>
+</html>

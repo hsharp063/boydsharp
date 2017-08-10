@@ -1,0 +1,88 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@using Umbraco.Web;
+
+@{ var arts = Model.Content.Site().Descendants("portfolioStyle1")
+						.Where(x => x.GetPropertyValue<string>("featureOnHomePage") == "True"); }
+						
+@if (arts.Count() > 0)
+{
+    <!-- Slider2 -->
+		<div class="slider-content container">
+			<div class="space40"></div>
+			<div class="home-slider2">
+				<div class="flexslider" id="home-slider2">
+					<ul class="slides">
+					    @foreach (var art in arts)
+                        {
+                            <li>
+    							<div class="home-slider2-wrap">
+    								<img src="@Umbraco.Media(art.GetPropertyValue("image").ToString()).Url" alt="@art.GetPropertyValue("title")">
+    								<div class="slider2-info">
+    									<h3>@art.GetPropertyValue("title")</h3>
+    									@if(art.HasValue("description")){
+        							        <p>@art.GetPropertyValue("description")</p>
+        							    }
+    								</div>
+    							</div>
+    						</li>
+                        }
+						
+					</ul>
+				</div>
+				<ul class="home-slider2-thumbs">
+				    @foreach (var art in arts)
+                    {
+                        <li>
+    						<div class="home-slider2-inner">
+    							<img src="@Umbraco.Media(art.GetPropertyValue("image").ToString()).Url" class="img-responsive" alt="@art.GetPropertyValue("title")">
+    							<div class="overlay-wrap1">
+    								<div class="overlay">
+    									<div class="overlay-inner">
+    										<a href="#"><i class="fa fa-plus"></i></a>
+    									</div>
+    								</div>
+    							</div>
+    						</div>
+    					</li>
+                    }
+				</ul>
+			</div>
+		</div>
+		<!--Slider 2-->
+}else{
+    @*workspace.jpg as default image *@
+    <!-- Slider2 -->
+		<div class="slider-content container">
+			<div class="space40"></div>
+			<div class="home-slider2">
+				<div class="flexslider" id="home-slider2">
+					<ul class="slides">
+                        <li>
+							<div class="home-slider2-wrap">
+								<img src="/images/workspace.jpg" alt="Workspace by Boyd Sharp">
+								<div class="slider2-info">
+									<h3>Workspace by Boyd Sharp</h3>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<ul class="home-slider2-thumbs">
+                    <li>
+						<div class="home-slider2-inner">
+							<img src="/images/workspace.jpg" class="img-responsive" alt="Workspace by Boyd Sharp">
+							<div class="overlay-wrap1">
+								<div class="overlay">
+									<div class="overlay-inner">
+										<a href="#"><i class="fa fa-plus"></i></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	<!--Slider 2-->
+}
