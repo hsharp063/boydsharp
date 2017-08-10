@@ -1,0 +1,56 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@using Umbraco.Web;
+
+@{ 
+    var arts = Model.Content.Site().Descendants("portfolioStyle1").Where(x => x.GetPropertyValue<string>("new") == "True"); 
+    var itemClasses = "";
+    var count = 1;
+    var portfolio = Umbraco.TypedContent(Model.Content.GetPropertyValue<int>("featuredPortfolio"));
+}
+						
+@if (arts.Count() > 0)
+{
+    <!-- Home - New Work -->
+    <h3 class="head-title">New Work</h3>
+    <div class="home-projects">
+        <div id="home-projects" class="owl-carousel">
+            <div class="item">
+                <div class="row">
+                    @foreach(var art in arts){
+                        if(count == 1){
+                            itemClasses = "p-item col-md-6";
+                        }else if(count > 1 && count < 4){
+                            itemClasses = "p-item col-md-3";
+                        }else if(count > 3){
+                            itemClasses = "p-item col-md-2 col-sm-4";
+                        }
+                        <div class="@itemClasses">
+							<div class="p-item-inner">
+								<img src="@Umbraco.Media(art.GetPropertyValue("image").ToString()).Url" class="img-responsive" alt="@art.GetPropertyValue("title")">
+								<div class="overlay-wrap">
+									<div class="overlay">
+										<div class="overlay-inner">
+											<a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i></a>
+											<div class="space30"></div>
+											<h5>@art.GetPropertyValue("title")</h5>
+											@if(art.HasValue("description")){
+        							            <p>@art.GetPropertyValue("description")</p>
+        							        }
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						count ++;
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div class="space20"></div>
+        <a href="@portfolio.Url" class="btn btn-primary btn-orange btn-sm uppercase center-block pull-right">View Portfolio &rarr;</a>
+        <div class="clear"></div>
+        <div class="space50"></div>
+    </div>
+}

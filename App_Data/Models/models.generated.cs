@@ -19,8 +19,8 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "4c8bb13b6121d977")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.4")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "a403af025b3ec601")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
 
 namespace Umbraco.Web.PublishedContentModels
 {
@@ -459,6 +459,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public Newtonsoft.Json.Linq.JToken Content
 		{
 			get { return this.GetPropertyValue<Newtonsoft.Json.Linq.JToken>("content"); }
+		}
+
+		///<summary>
+		/// Featured Portfolio: Which portfolio page should be featured on the home page via the "view portfolio" link?
+		///</summary>
+		[ImplementPropertyType("featuredPortfolio")]
+		public IPublishedContent FeaturedPortfolio
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("featuredPortfolio"); }
 		}
 
 		///<summary>
