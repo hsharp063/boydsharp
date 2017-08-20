@@ -1,0 +1,52 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
+@{ var selection = Model.Content.Site().Children.Where(x => x.IsVisible()); }
+
+<footer>
+		<div class="container">
+		    @if (selection.Any())
+		    {
+    		    <div class="col-md-2 footer-widget">
+    				<h6>Quick Links</h6>
+    				<ul class="link-list">
+    				    
+                    @foreach (var item in selection)
+                    {
+                        <li class="@(item.IsAncestorOrSelf(Model.Content) ? "current" : null)">
+                            <a href="@item.Url">&rarr; @item.Name</a>
+                        </li>
+                    }
+    				</ul>
+    			</div>
+            }
+			<div class="col-md-3 footer-widget">
+				<h6>Contact</h6>
+				<p>Boyd Sharp Art<br>Osage, MN <br/>Telephone: 218-573-3412<Br/>Email: boydsharpart@gmail.com</p>
+			</div>
+			<div class="col-md-4 footer-widget">
+				<h6>Be Sociable</h6>
+			    <p>See what Boyd is working on now via his social media.</p>
+				<ul class="social">
+					<li><a target="_blank" href="http://www.facebook.com/pages/Boyd-Sharp-Art/227666200659850"><i class="fa fa-facebook"></i></a></li>
+					<li><a target="_blank" href="http://www.youtube.com/user/boydsharpart"><i class="fa fa-youtube"></i></a></li>
+				</ul>
+			</div>
+			<div class="col-md-3 footer-widget">
+			    <h6>Also featured in...</h6>
+			    <p>Prints and original artwork can also be purchased from the following sites.</p>
+			    <ul class="link-list">
+			        <li><a target="_blank" href="https://fineartamerica.com/artists/boyd+sharp">&rarr; Fine Art America</a></li>
+			        <li><a target="_blank" href="https://www.saatchiart.com/account/profile/875004">&rarr; Saatchi Art</a></li>
+			    </ul>
+			</div>
+		</div>
+	</footer>
+	<div class="footer-copy">
+		<div class="container">
+			<div class="col-md-12">
+				<p>&copy; Copyright 2017 Boyd Sharp Art</p>
+			</div>
+		</div>
+	</div>
+	<!-- Footer -->
+
